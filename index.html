@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" type="image/x-icon" href="favicon.ico?v=2">
+    <link rel="shortcut icon" href="favicon.ico?v=2" type="image/x-icon">
+    
+    <title>Kvadratik Pro | Пиксельный редактор</title>
+    
+    <!-- Мета-теги -->
+    <meta name="keywords" content="пиксельный редактор, рисование, анимация, слои, pixel art">
+    <meta name="description" content="Kvadratik Pro - пиксельный редактор с анимацией и слоями.">
+    <meta name="author" content="Kvadratik Team">
+    
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+        background: linear-gradient(135deg, #4a90e2 0%, #6c5ce7 100%);
+        color: #333;
+        line-height: 1.6;
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .header {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 20px 0;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        backdrop-filter: blur(10px);
+    }
+    
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #4a90e2;
+    }
+    
+    .nav a {
+        color: #333;
+        text-decoration: none;
+        margin-left: 30px;
+        font-weight: 500;
+        transition: color 0.3s;
+    }
+    
+    .nav a:hover {
+        color: #4a90e2;
+    }
+    
+    .hero {
+        background: white;
+        padding: 80px 0;
+        text-align: center;
+    }
+    
+    .hero h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+        color: #333;
+    }
+    
+    .hero p {
+        font-size: 20px;
+        color: #666;
+        max-width: 800px;
+        margin: 0 auto 30px;
+    }
+    
+    .hero-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+    }
+    
+    .btn {
+        padding: 15px 40px;
+        font-size: 18px;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-block;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 20px rgba(74,144,226,0.3);
+    }
+    
+    .btn-primary {
+        background: #4a90e2;
+        color: white;
+    }
+    
+    .btn-outline {
+        background: transparent;
+        border: 2px solid #4a90e2;
+        color: #4a90e2;
+    }
+    
+    .btn-outline:hover {
+        background: #4a90e2;
+        color: white;
+    }
+    
+    .screenshot {
+        background: #f8f9fa;
+        padding: 60px 0;
+        text-align: center;
+    }
+    
+    .screenshot h2 {
+        color: #333;
+        font-size: 36px;
+        margin-bottom: 40px;
+    }
+    
+    .screenshot img {
+        max-width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        border: 2px solid #ddd;
+    }
+    
+    .features {
+        background: white;
+        padding: 80px 0;
+    }
+    
+    .features h2 {
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 60px;
+        color: #333;
+    }
+    
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+    
+    .feature-card {
+        background: #f8f9fa;
+        padding: 30px;
+        border-radius: 10px;
+        text-align: center;
+        transition: transform 0.3s;
+        border-left: 4px solid #4a90e2;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    
+    .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+    
+    .feature-icon {
+        font-size: 48px;
+        margin-bottom: 20px;
+    }
+    
+    .feature-card h3 {
+        font-size: 24px;
+        margin-bottom: 15px;
+        color: #333;
+    }
+    
+    .feature-card p {
+        color: #666;
+    }
+    
+    .stats {
+        background: linear-gradient(135deg, #4a90e2 0%, #6c5ce7 100%);
+        color: white;
+        padding: 60px 0;
+        text-align: center;
+    }
+    
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .stat-item h3 {
+        font-size: 48px;
+        margin-bottom: 10px;
+    }
+    
+    .stat-item p {
+        font-size: 18px;
+        opacity: 0.9;
+    }
+    
+    .download {
+        background: white;
+        padding: 80px 0;
+        text-align: center;
+    }
+    
+    .download h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+        color: #333;
+    }
+    
+    .download p {
+        font-size: 18px;
+        color: #666;
+        max-width: 600px;
+        margin: 0 auto 30px;
+    }
+    
+    .download-info {
+        background: #f8f9fa;
+        padding: 30px;
+        border-radius: 10px;
+        max-width: 500px;
+        margin: 30px auto;
+        text-align: left;
+        color: #666;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    
+    .download-info h3 {
+        color: #333;
+        margin-bottom: 15px;
+    }
+    
+    .download-info li {
+        margin: 10px 0;
+        list-style: none;
+        padding-left: 25px;
+        position: relative;
+    }
+    
+    .download-info li:before {
+        content: "✓";
+        color: #4a90e2;
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+    }
+    
+    .hotkeys {
+        background: #f8f9fa;
+        padding: 60px 0;
+    }
+    
+    .hotkeys h2 {
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 40px;
+        color: #333;
+    }
+    
+    .hotkeys-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .hotkey-item {
+        background: white;
+        padding: 12px 20px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        color: #666;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    
+    .hotkey-key {
+        color: #4a90e2;
+        font-weight: bold;
+        font-family: monospace;
+        font-size: 16px;
+    }
+    
+    .footer {
+        background: #2d3748;
+        color: white;
+        padding: 40px 0;
+        text-align: center;
+    }
+    
+    .footer p {
+        opacity: 0.8;
+        margin: 5px 0;
+    }
+    
+    .footer a {
+        color: #4a90e2;
+    }
+    
+    @media (max-width: 768px) {
+        .hero h1 {
+            font-size: 36px;
+        }
+        
+        .hero p {
+            font-size: 18px;
+        }
+        
+        .hero-buttons {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .nav {
+            display: none;
+        }
+    }
+</style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">Kvadratik Pro</div>
+            <nav class="nav">
+                <a href="docs.html">Документация</a>
+                <a href="#about">О программе</a>
+                <a href="#features">Возможности</a>
+                <a href="#download">Скачать</a>
+                <a href="#hotkeys">Горячие клавиши</a>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero" id="about">
+        <div class="container">
+            <h1>Kvadratik Pro</h1>
+            <p>Пиксельный редактор с анимацией и слоями.</p>
+            <div class="hero-buttons">
+                <a href="#download" class="btn btn-primary">Скачать</a>
+                <a href="#features" class="btn btn-outline">Возможности</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="screenshot">
+        <div class="container">
+            <h2>Как выглядит программа</h2>
+            <img src="screenshot.png" alt="Скриншот Kvadratik Pro" onerror="this.style.display='none'">
+            
+        </div>
+    </section>
+    
+    <section class="features" id="features">
+        <div class="container">
+            <h2>Что умеет Kvadratik Pro</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Рисование</h3>
+                    <p>5 видов кистей, симметрия, градиенты, регулировка жесткости. Слои с прозрачностью.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎭</div>
+                    <h3>Анимация</h3>
+                    <p>Кадры, onion skinning, экспорт в GIF и спрайт-листы. Разная скорость для кадров.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Цвета</h3>
+                    <p>Color Picker, история цветов, основной/дополнительный цвет. Настраиваемая палитра.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h3>Фильтры</h3>
+                    <p>Размытие, черно-белое, сепия, инверсия, пикселизация и другие эффекты.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🖼️</div>
+                    <h3>Интерфейс</h3>
+                    <p>Тёмная тема, линейки, масштабирование, горячие клавиши, автосохранение.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Инструменты</h3>
+                    <p>Волшебная палочка, выделение, копирование/вставка. Отмена/повтор (200 действий!).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>10+</h3>
+                    <p>инструментов</p>
+                </div>
+                <div class="stat-item">
+                    <h3>5</h3>
+                    <p>видов кистей</p>
+                </div>
+                <div class="stat-item">
+                    <h3>∞</h3>
+                    <p>слоёв</p>
+                </div>
+            </div>
+            <p style="margin-top: 20px; opacity: 0.9;">Бесплатно, с открытым кодом</p>
+        </div>
+    </section>
+    
+    <section class="hotkeys" id="hotkeys">
+        <div class="container">
+            <h2>Горячие клавиши</h2>
+            <div class="hotkeys-grid">
+                <div class="hotkey-item"><span class="hotkey-key">B</span> - Кисть</div>
+                <div class="hotkey-item"><span class="hotkey-key">E</span> - Ластик</div>
+                <div class="hotkey-item"><span class="hotkey-key">G</span> - Градиент</div>
+                <div class="hotkey-item"><span class="hotkey-key">M</span> - Волшебная палочка</div>
+                <div class="hotkey-item"><span class="hotkey-key">S</span> - Выделение</div>
+                <div class="hotkey-item"><span class="hotkey-key">L</span> - Линия</div>
+                <div class="hotkey-item"><span class="hotkey-key">R</span> - Прямоугольник</div>
+                <div class="hotkey-item"><span class="hotkey-key">O</span> - Овал</div>
+                <div class="hotkey-item"><span class="hotkey-key">I</span> - Пипетка</div>
+                <div class="hotkey-item"><span class="hotkey-key">F</span> - Заливка</div>
+                <div class="hotkey-item"><span class="hotkey-key">[</span> - Уменьшить кисть</div>
+                <div class="hotkey-item"><span class="hotkey-key">]</span> - Увеличить кисть</div>
+                <div class="hotkey-item"><span class="hotkey-key">X</span> - Поменять цвета</div>
+                <div class="hotkey-item"><span class="hotkey-key">D</span> - Цвета по умолчанию</div>
+                <div class="hotkey-item"><span class="hotkey-key">Ctrl+Z</span> - Отменить</div>
+                <div class="hotkey-item"><span class="hotkey-key">Ctrl+Y</span> - Повторить</div>
+                <div class="hotkey-item"><span class="hotkey-key">Ctrl+C</span> - Копировать</div>
+                <div class="hotkey-item"><span class="hotkey-key">Ctrl+V</span> - Вставить</div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="download" id="download">
+        <div class="container">
+            <h2>Скачать Kvadratik Pro</h2>
+            <p>Версия 3.0 для Windows 10/11.</p>
+            
+            <div class="download-info">
+                <h3>Что входит:</h3>
+                <ul>
+                    <li>Готовый .exe файл</li>
+                    <li>Все инструменты</li>
+                    <li>Поддержка слоёв и анимации</li>
+                    <li>Сохранение настроек</li>
+                    <li>Автосохранение</li>
+                </ul>
+                <p style="margin-top: 20px; font-size: 14px;">Размер: ~17 МБ</p>
+            </div>
+            
+            <div style="margin: 30px 0;">
+                <a href="Kvadratik.exe" class="btn btn-primary">Скачать .exe</a>
+            </div>
+            
+            <!-- Предупреждение перед скачиванием -->
+            <div style="margin: 20px auto; max-width: 600px; padding: 15px; background: #fff3cd; border-left: 4px solid #ffc107; border-radius: 5px; text-align: left;">
+                <p style="color: #856404; margin-bottom: 10px; font-weight: bold;">Перед скачиванием:</p>
+                <p style="color: #856404; margin-bottom: 5px;">• Ознакомьтесь с <a href="docs.html" style="color: #4a90e2; font-weight: bold; text-decoration: underline;">документацией</a> чтобы узнать все возможности</p>
+                <p style="color: #856404; margin-bottom: 5px;">• Программа не требует установки</p>
+                <p style="color: #856404;">• При первом запуске Windows Defender может попросить подтверждение</p>
+            </div>
+            
+            <!-- Блок доната -->
+            <div style="text-align: center; margin: 40px auto; max-width: 600px;">
+                <div style="background: linear-gradient(135deg, #f5f7fa 0%, #e9ecf0 100%); padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                    <h3 style="color: #333; margin-bottom: 15px;">Поддержать разработчика</h3>
+                    <p style="color: #666; margin-bottom: 25px;">
+                        Программа полностью бесплатна. Если она помогла вам сэкономить время, можете угостить автора кофе.
+                    </p>
+                    
+                    <!-- Кнопка ЮMoney -->
+                    <a href="https://yoomoney.ru/to/4100119477760313" target="_blank" 
+                       style="display: inline-block; background: #ffcc00; color: #333; padding: 15px 40px; 
+                              border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 18px;
+                              box-shadow: 0 4px 10px rgba(255,204,0,0.3); transition: transform 0.3s;
+                              margin: 5px;">
+                        💛 ЮMoney
+                    </a>
+                    
+                    <!-- Карта -->
+                    <p style="margin-top: 20px; color: #999; font-size: 14px;">
+                        Или просто на карту: <b>2202 2056 2856 8104</b>
+                    </p>
+                </div>
+            </div>
+            
+            <p style="margin-top: 20px; color: #999; font-size: 14px;">
+                Программа не требует установки. Просто запустите .exe файл.
+            </p>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 Kvadratik Pro</p>
+            <p><a href="mailto:cleaner1c@mail.ru">cleaner1c@mail.ru</a></p>
+            <p style="margin-top: 20px; font-size: 12px;">Бесплатная программа с открытым кодом</p>
+        </div>
+    </footer>
+</body>
+</html>
