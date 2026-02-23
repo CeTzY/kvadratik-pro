@@ -7,345 +7,42 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico?v=2">
     <link rel="shortcut icon" href="favicon.ico?v=2" type="image/x-icon">
     
-    <title>Kvadratik Pro | Пиксельный редактор</title>
+    <title>Kvadratik Pro 4.0 | Пиксельный редактор с AI</title>
     
     <!-- Мета-теги -->
-    <meta name="keywords" content="пиксельный редактор, рисование, анимация, слои, pixel art">
-    <meta name="description" content="Kvadratik Pro - пиксельный редактор с анимацией и слоями.">
-    <meta name="author" content="Kvadratik Team">
+    <meta name="keywords" content="пиксельный редактор, рисование, анимация, слои, pixel art, ai помощник, deepseek">
+    <meta name="description" content="Kvadratik Pro 4.0 - пиксельный редактор с AI помощником на базе DeepSeek. Слои, анимация, текст, фильтры и умный AI.">
+    <meta name="author" content="CeTzY Dev">
     
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+    <!-- Подключение CSS -->
+    <link rel="stylesheet" href="style.css">
     
-    body {
-        background: linear-gradient(135deg, #4a90e2 0%, #6c5ce7 100%);
-        color: #333;
-        line-height: 1.6;
-    }
-    
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-    
-    .header {
-        background: rgba(255, 255, 255, 0.95);
-        padding: 20px 0;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        backdrop-filter: blur(10px);
-    }
-    
-    .header-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    
-    .logo {
-        font-size: 24px;
-        font-weight: bold;
-        color: #4a90e2;
-    }
-    
-    .nav a {
-        color: #333;
-        text-decoration: none;
-        margin-left: 30px;
-        font-weight: 500;
-        transition: color 0.3s;
-    }
-    
-    .nav a:hover {
-        color: #4a90e2;
-    }
-    
-    .hero {
-        background: white;
-        padding: 80px 0;
-        text-align: center;
-    }
-    
-    .hero h1 {
-        font-size: 48px;
-        margin-bottom: 20px;
-        color: #333;
-    }
-    
-    .hero p {
-        font-size: 20px;
-        color: #666;
-        max-width: 800px;
-        margin: 0 auto 30px;
-    }
-    
-    .hero-buttons {
-        display: flex;
-        gap: 20px;
-        justify-content: center;
-    }
-    
-    .btn {
-        padding: 15px 40px;
-        font-size: 18px;
-        border: none;
-        border-radius: 50px;
-        cursor: pointer;
-        font-weight: 600;
-        text-decoration: none;
-        display: inline-block;
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
-    
-    .btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 5px 20px rgba(74,144,226,0.3);
-    }
-    
-    .btn-primary {
-        background: #4a90e2;
-        color: white;
-    }
-    
-    .btn-outline {
-        background: transparent;
-        border: 2px solid #4a90e2;
-        color: #4a90e2;
-    }
-    
-    .btn-outline:hover {
-        background: #4a90e2;
-        color: white;
-    }
-    
-    .screenshot {
-        background: #f8f9fa;
-        padding: 60px 0;
-        text-align: center;
-    }
-    
-    .screenshot h2 {
-        color: #333;
-        font-size: 36px;
-        margin-bottom: 40px;
-    }
-    
-    .screenshot img {
-        max-width: 100%;
-        border-radius: 10px;
-        box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-        border: 2px solid #ddd;
-    }
-    
-    .features {
-        background: white;
-        padding: 80px 0;
-    }
-    
-    .features h2 {
-        text-align: center;
-        font-size: 36px;
-        margin-bottom: 60px;
-        color: #333;
-    }
-    
-    .features-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
-    }
-    
-    .feature-card {
-        background: #f8f9fa;
-        padding: 30px;
-        border-radius: 10px;
-        text-align: center;
-        transition: transform 0.3s;
-        border-left: 4px solid #4a90e2;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
-    
-    .feature-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    }
-    
-    .feature-icon {
-        font-size: 48px;
-        margin-bottom: 20px;
-    }
-    
-    .feature-card h3 {
-        font-size: 24px;
-        margin-bottom: 15px;
-        color: #333;
-    }
-    
-    .feature-card p {
-        color: #666;
-    }
-    
-    .stats {
-        background: linear-gradient(135deg, #4a90e2 0%, #6c5ce7 100%);
-        color: white;
-        padding: 60px 0;
-        text-align: center;
-    }
-    
-    .stats-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 30px;
-        max-width: 800px;
-        margin: 0 auto;
-    }
-    
-    .stat-item h3 {
-        font-size: 48px;
-        margin-bottom: 10px;
-    }
-    
-    .stat-item p {
-        font-size: 18px;
-        opacity: 0.9;
-    }
-    
-    .download {
-        background: white;
-        padding: 80px 0;
-        text-align: center;
-    }
-    
-    .download h2 {
-        font-size: 36px;
-        margin-bottom: 20px;
-        color: #333;
-    }
-    
-    .download p {
-        font-size: 18px;
-        color: #666;
-        max-width: 600px;
-        margin: 0 auto 30px;
-    }
-    
-    .download-info {
-        background: #f8f9fa;
-        padding: 30px;
-        border-radius: 10px;
-        max-width: 500px;
-        margin: 30px auto;
-        text-align: left;
-        color: #666;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
-    
-    .download-info h3 {
-        color: #333;
-        margin-bottom: 15px;
-    }
-    
-    .download-info li {
-        margin: 10px 0;
-        list-style: none;
-        padding-left: 25px;
-        position: relative;
-    }
-    
-    .download-info li:before {
-        content: "✓";
-        color: #4a90e2;
-        position: absolute;
-        left: 0;
-        font-weight: bold;
-    }
-    
-    .hotkeys {
-        background: #f8f9fa;
-        padding: 60px 0;
-    }
-    
-    .hotkeys h2 {
-        text-align: center;
-        font-size: 36px;
-        margin-bottom: 40px;
-        color: #333;
-    }
-    
-    .hotkeys-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 15px;
-        max-width: 800px;
-        margin: 0 auto;
-    }
-    
-    .hotkey-item {
-        background: white;
-        padding: 12px 20px;
-        border-radius: 5px;
-        border: 1px solid #ddd;
-        color: #666;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    }
-    
-    .hotkey-key {
-        color: #4a90e2;
-        font-weight: bold;
-        font-family: monospace;
-        font-size: 16px;
-    }
-    
-    .footer {
-        background: #2d3748;
-        color: white;
-        padding: 40px 0;
-        text-align: center;
-    }
-    
-    .footer p {
-        opacity: 0.8;
-        margin: 5px 0;
-    }
-    
-    .footer a {
-        color: #4a90e2;
-    }
-    
-    @media (max-width: 768px) {
-        .hero h1 {
-            font-size: 36px;
-        }
-        
-        .hero p {
-            font-size: 18px;
-        }
-        
-        .hero-buttons {
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .nav {
-            display: none;
-        }
-    }
-</style>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+       m[i].l=1*new Date();
+       for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+       k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+       ym(106921415, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true,
+            ecommerce:"dataLayer",
+            ssr: true,
+            referrer: document.referrer,
+            url: location.href
+       });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/106921415" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 </head>
 <body>
     <header class="header">
         <div class="container header-content">
-            <div class="logo">Kvadratik Pro</div>
+            <div class="logo">Kvadratik Pro 4.0</div>
             <nav class="nav">
-                <a href="docs.html">Документация</a>
                 <a href="#about">О программе</a>
                 <a href="#features">Возможности</a>
                 <a href="#download">Скачать</a>
@@ -357,25 +54,86 @@
     <section class="hero" id="about">
         <div class="container">
             <h1>Kvadratik Pro</h1>
-            <p>Пиксельный редактор с анимацией и слоями.</p>
+            <div class="version">Версия 4.0</div>
+            <p>Мощный пиксельный редактор с искусственным интеллектом. Слои, анимация, текст и умный AI помощник на базе DeepSeek.</p>
             <div class="hero-buttons">
-                <a href="#download" class="btn btn-primary">Скачать</a>
+                <a href="#download" class="btn btn-primary">Скачать бесплатно</a>
                 <a href="#features" class="btn btn-outline">Возможности</a>
             </div>
+        </div>
+    </section>
+    
+    <section class="update-4-0">
+        <div class="update-card">
+            <h2>Kvadratik Pro 4.0</h2>
+            <h3>МЕГА-ОБНОВЛЕНИЕ С AI</h3>
+            
+            <div class="features-4-0">
+                <div class="feature-4-0">
+                    <h4>📝 ТЕКСТ</h4>
+                    <p>Полноценный инструмент для написания текста. Пиксельный шрифт 3x5, поддержка кириллицы и латиницы. Просто выбери инструмент "Текст" и кликни на холст!</p>
+                </div>
+                
+                <div class="feature-4-0">
+                    <h4>🤖 KVADRATIK PRO AI</h4>
+                    <p>Собственный искусственный интеллект на базе DeepSeek-R1:7b. Помогает с идеями, отвечает на вопросы, объясняет инструменты. Работает полностью локально!</p>
+                </div>
+            </div>
+            
+            <div class="ai-section">
+                <h4>⚙️ ДОСТУПНЫЕ AI МОДЕЛИ</h4>
+                
+                <div class="terminal">
+                    <p style="color: #4a90e2; font-weight: bold;">🌐 ОБЛАЧНЫЕ (самые умные, через интернет)</p>
+                    <p style="color: #4a90e2;">deepseek-v3.1:671b-cloud</p>
+                    <p style="color: #666; font-size: 12px; margin-top: 0;">671B параметров, самый мощный</p>
+                    
+                    <p style="color: #4a90e2; font-weight: bold; margin-top: 20px;">💻 ЛОКАЛЬНЫЕ (на твоём ПК)</p>
+                    
+                    <p style="color: #4a90e2; margin-top: 15px;">🔹 DeepSeek (умные, русский отлично)</p>
+                    <p>ollama pull deepseek-r1:7b     # 4.7 ГБ, самый умный локальный</p>
+                    <p>ollama pull deepseek-r1:1.5b   # 1.1 ГБ, легкий и быстрый</p>
+                    
+                    <p style="color: #4a90e2; margin-top: 15px;">🔹 Gemma (Google, качественные)</p>
+                    <p>ollama pull gemma3:4b          # 3.3 ГБ, хороший баланс</p>
+                    <p>ollama pull gemma2:2b          # 1.8 ГБ, быстрый</p>
+                    
+                    <p style="color: #4a90e2; margin-top: 15px;">🔹 Llama (Meta, мощные)</p>
+                    <p>ollama pull llama3.2:3b        # 2.8 ГБ, отличный русский</p>
+                    <p>ollama pull llama3.2:1b        # 0.8 ГБ, супер-легкий</p>
+                    
+                    <p style="color: #4a90e2; margin-top: 15px;">🔹 Phi (Microsoft, умные)</p>
+                    <p>ollama pull phi3:3.8b          # 3.2 ГБ, очень умный</p>
+                    <p>ollama pull phi3:mini          # 2.1 ГБ, легкий</p>
+                    
+                    <p style="color: #4a90e2; margin-top: 15px;">🔹 Mistral (быстрые)</p>
+                    <p>ollama pull mistral:7b         # 4.1 ГБ, быстрый и умный</p>
+                </div>
+                
+                <p style="color: #cccccc; font-size: 14px; margin-top: 20px;">
+                    * Программа сама выберет лучшую доступную модель<br>
+                    ** Для локальных моделей нужно место на диске (от 1 до 5 ГБ)<br>
+                    *** Рекомендуется 8+ ГБ RAM для комфортной работы
+                </p>
+            </div>
+            
+            <p style="text-align: center; color: #666; margin-top: 20px;">
+                Обновление уже доступно в программе. Скачай последнюю версию!
+            </p>
         </div>
     </section>
     
     <section class="screenshot">
         <div class="container">
             <h2>Как выглядит программа</h2>
-            <img src="screenshot.png" alt="Скриншот Kvadratik Pro" onerror="this.style.display='none'">
-            
+            <img src="screenshot.png" alt="Kvadratik Pro 4.0" onerror="this.style.display='none'">
+            <p style="color: #cccccc; margin-top: 20px;">Тёмная тема как в VS Code, изменяемые панели, AI помощник</p>
         </div>
     </section>
     
     <section class="features" id="features">
         <div class="container">
-            <h2>Что умеет Kvadratik Pro</h2>
+            <h2>Что умеет Kvadratik Pro 4.0</h2>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">🎨</div>
@@ -388,24 +146,24 @@
                     <p>Кадры, onion skinning, экспорт в GIF и спрайт-листы. Разная скорость для кадров.</p>
                 </div>
                 <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>Текст</h3>
+                    <p>Пиксельный шрифт 3x5. Поддержка букв, цифр и символов. Вставляй текст прямо на холст.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI Помощник</h3>
+                    <p>DeepSeek-R1:7b внутри программы. Помогает с идеями, отвечает на вопросы, объясняет инструменты.</p>
+                </div>
+                <div class="feature-card">
                     <div class="feature-icon">🎨</div>
                     <h3>Цвета</h3>
-                    <p>Color Picker, история цветов, основной/дополнительный цвет. Настраиваемая палитра.</p>
+                    <p>Color Picker, история цветов, основной/дополнительный цвет. Настраиваемая палитра 28 цветов.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">✨</div>
                     <h3>Фильтры</h3>
                     <p>Размытие, черно-белое, сепия, инверсия, пикселизация и другие эффекты.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🖼️</div>
-                    <h3>Интерфейс</h3>
-                    <p>Тёмная тема, линейки, масштабирование, горячие клавиши, автосохранение.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Инструменты</h3>
-                    <p>Волшебная палочка, выделение, копирование/вставка. Отмена/повтор (200 действий!).</p>
                 </div>
             </div>
         </div>
@@ -426,8 +184,11 @@
                     <h3>∞</h3>
                     <p>слоёв</p>
                 </div>
+                <div class="stat-item">
+                    <h3>4.0</h3>
+                    <p>версия с AI</p>
+                </div>
             </div>
-            <p style="margin-top: 20px; opacity: 0.9;">Бесплатно, с открытым кодом</p>
         </div>
     </section>
     
@@ -445,6 +206,7 @@
                 <div class="hotkey-item"><span class="hotkey-key">O</span> - Овал</div>
                 <div class="hotkey-item"><span class="hotkey-key">I</span> - Пипетка</div>
                 <div class="hotkey-item"><span class="hotkey-key">F</span> - Заливка</div>
+                <div class="hotkey-item"><span class="hotkey-key">T</span> - Текст</div>
                 <div class="hotkey-item"><span class="hotkey-key">[</span> - Уменьшить кисть</div>
                 <div class="hotkey-item"><span class="hotkey-key">]</span> - Увеличить кисть</div>
                 <div class="hotkey-item"><span class="hotkey-key">X</span> - Поменять цвета</div>
@@ -459,67 +221,64 @@
     
     <section class="download" id="download">
         <div class="container">
-            <h2>Скачать Kvadratik Pro</h2>
-            <p>Версия 3.0 для Windows 10/11.</p>
+            <h2>Скачать Kvadratik Pro 4.0</h2>
+            <p>Бесплатно, без регистрации. Версия 4.0 для Windows 10/11.</p>
             
             <div class="download-info">
-                <h3>Что входит:</h3>
+                <h3>Что входит в версию 4.0:</h3>
                 <ul>
-                    <li>Готовый .exe файл</li>
-                    <li>Все инструменты</li>
+                    <li>Готовый .exe файл (30 МБ)</li>
+                    <li>Все инструменты рисования</li>
                     <li>Поддержка слоёв и анимации</li>
-                    <li>Сохранение настроек</li>
+                    <li>Текст и пиксельный шрифт</li>
+                    <li>AI помощник (DeepSeek-R1:7b)</li>
                     <li>Автосохранение</li>
                 </ul>
-                <p style="margin-top: 20px; font-size: 14px;">Размер: ~17 МБ</p>
             </div>
             
+            <!-- СКАЧИВАНИЕ С ЯНДЕКС.ДИСКА -->
             <div style="margin: 30px 0;">
-                <a href="Kvadratik.exe" class="btn btn-primary">Скачать .exe</a>
+                <a href="https://disk.yandex.ru/d/Xu4DqZOEypRyHQ" class="btn btn-primary" style="font-size: 20px; padding: 20px 50px;">
+                    📥 Скачать с Яндекс.Диска (30 МБ)
+                </a>
             </div>
             
-            <!-- Предупреждение перед скачиванием -->
-            <div style="margin: 20px auto; max-width: 600px; padding: 15px; background: #fff3cd; border-left: 4px solid #ffc107; border-radius: 5px; text-align: left;">
-                <p style="color: #856404; margin-bottom: 10px; font-weight: bold;">Перед скачиванием:</p>
-                <p style="color: #856404; margin-bottom: 5px;">• Ознакомьтесь с <a href="docs.html" style="color: #4a90e2; font-weight: bold; text-decoration: underline;">документацией</a> чтобы узнать все возможности</p>
-                <p style="color: #856404; margin-bottom: 5px;">• Программа не требует установки</p>
-                <p style="color: #856404;">• При первом запуске Windows Defender может попросить подтверждение</p>
-            </div>
+            <p style="color: #cccccc; margin: 20px 0;">
+                Программа не требует установки. Просто запустите .exe файл.
+            </p>
             
             <!-- Блок доната -->
             <div style="text-align: center; margin: 40px auto; max-width: 600px;">
-                <div style="background: linear-gradient(135deg, #f5f7fa 0%, #e9ecf0 100%); padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                    <h3 style="color: #333; margin-bottom: 15px;">Поддержать разработчика</h3>
-                    <p style="color: #666; margin-bottom: 25px;">
-                        Программа полностью бесплатна. Если она помогла вам сэкономить время, можете угостить автора кофе.
+                <div style="background: linear-gradient(135deg, #2d2d30 0%, #1e1e1e 100%); padding: 30px; border-radius: 15px; border: 1px solid #3f3f46;">
+                    <h3 style="color: white; margin-bottom: 15px;">Поддержать разработчика</h3>
+                    <p style="color: #cccccc; margin-bottom: 25px;">
+                        Программа полностью бесплатна. Если она вам помогает, можете угостить автора кофе.
                     </p>
                     
-                    <!-- Кнопка ЮMoney -->
                     <a href="https://yoomoney.ru/to/4100119477760313" target="_blank" 
                        style="display: inline-block; background: #ffcc00; color: #333; padding: 15px 40px; 
                               border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 18px;
-                              box-shadow: 0 4px 10px rgba(255,204,0,0.3); transition: transform 0.3s;
-                              margin: 5px;">
+                              box-shadow: 0 4px 10px rgba(255,204,0,0.3); transition: transform 0.3s;">
                         💛 ЮMoney
                     </a>
                     
-                    <!-- Карта -->
                     <p style="margin-top: 20px; color: #999; font-size: 14px;">
                         Или просто на карту: <b>2202 2056 2856 8104</b>
                     </p>
                 </div>
             </div>
             
-            <p style="margin-top: 20px; color: #999; font-size: 14px;">
-                Программа не требует установки. Просто запустите .exe файл.
+            <p style="color: #666; font-size: 14px; margin-top: 20px;">
+                AI требует установки Ollama. Подробности в разделе обновления 4.0
             </p>
         </div>
     </section>
     
     <footer class="footer">
         <div class="container">
-            <p>© 2026 Kvadratik Pro</p>
-            <p><a href="mailto:cleaner1c@mail.ru">cleaner1c@mail.ru</a></p>
+            <p>© 2026 Kvadratik Pro 4.0</p>
+            <p>Разработчик: <strong style="color: #007acc;">CeTzY Dev</strong></p>
+            <p>По вопросам: <a href="mailto:cleaner1c@mail.ru">cleaner1c@mail.ru</a></p>
             <p style="margin-top: 20px; font-size: 12px;">Бесплатная программа с открытым кодом</p>
         </div>
     </footer>
