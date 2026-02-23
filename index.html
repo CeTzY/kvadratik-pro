@@ -83,21 +83,37 @@
             <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px; border-radius: 10px; color: white;">
                 <h4 style="font-size: 22px; margin-bottom: 20px;">⚙️ ДОСТУПНЫЕ AI МОДЕЛИ</h4>
                 
-                <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 8px; font-family: monospace;">
-                    <p style="color: #ffd700; font-weight: bold;">🌐 ОБЛАЧНЫЕ:</p>
-                    <p style="color: #fff;">ollama pull deepseek-v3.1:671b-cloud</p>
-                    
-                    <p style="color: #ffd700; font-weight: bold; margin-top: 15px;">💻 ЛОКАЛЬНЫЕ:</p>
-                    <p style="color: #4a90e2;"># DeepSeek</p>
-                    <p style="color: #fff;">ollama pull deepseek-r1:7b     # 4.7 ГБ</p>
-                    <p style="color: #fff;">ollama pull deepseek-r1:1.5b   # 1.1 ГБ</p>
-                    
-                    <p style="color: #4a90e2; margin-top: 10px;"># Gemma</p>
-                    <p style="color: #fff;">ollama pull gemma3:4b          # 3.3 ГБ</p>
-                    
-                    <p style="color: #4a90e2; margin-top: 10px;"># Llama</p>
-                    <p style="color: #fff;">ollama pull llama3.2:3b        # 2.8 ГБ</p>
-                </div>
+<div style="background: #1e1e1e; padding: 30px; border-radius: 10px; color: white; border: 1px solid #3f3f46;">
+    <h4 style="font-size: 22px; margin-bottom: 20px; color: #4a90e2;">⚙️ ДОСТУПНЫЕ AI МОДЕЛИ</h4>
+    
+    <div style="background: #2d2d30; padding: 20px; border-radius: 8px; font-family: monospace; border: 1px solid #3f3f46;">
+        <p style="color: #ffd700; font-weight: bold;">🌐 ОБЛАЧНЫЕ:</p>
+        <p style="color: #fff;">ollama pull deepseek-v3.1:671b-cloud</p>
+        
+        <p style="color: #ffd700; font-weight: bold; margin-top: 15px;">💻 ЛОКАЛЬНЫЕ:</p>
+        <p style="color: #4a90e2;"># DeepSeek</p>
+        <p style="color: #fff;">ollama pull deepseek-r1:7b     # 4.7 ГБ</p>
+        <p style="color: #fff;">ollama pull deepseek-r1:1.5b   # 1.1 ГБ</p>
+        
+        <p style="color: #4a90e2; margin-top: 10px;"># Gemma</p>
+        <p style="color: #fff;">ollama pull gemma3:4b          # 3.3 ГБ</p>
+        
+        <p style="color: #4a90e2; margin-top: 10px;"># Llama</p>
+        <p style="color: #fff;">ollama pull llama3.2:3b        # 2.8 ГБ</p>
+        <p style="color: #fff;">ollama pull llama3.2:1b        # 0.8 ГБ</p>
+        
+        <p style="color: #4a90e2; margin-top: 10px;"># Phi</p>
+        <p style="color: #fff;">ollama pull phi3:3.8b          # 3.2 ГБ</p>
+        
+        <p style="color: #4a90e2; margin-top: 10px;"># Mistral</p>
+        <p style="color: #fff;">ollama pull mistral:7b         # 4.1 ГБ</p>
+    </div>
+    
+    <p style="font-size: 14px; margin-top: 20px; color: #999;">
+        * Программа сама выберет лучшую доступную модель<br>
+        ** Рекомендуется 8+ ГБ RAM
+    </p>
+</div>
                 
                 <p style="font-size: 14px; margin-top: 20px; opacity: 0.9;">
                     * Программа сама выберет лучшую доступную модель<br>
@@ -265,3 +281,4 @@
     </footer>
 </body>
 </html>
+
