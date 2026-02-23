@@ -53,73 +53,57 @@
     
     <section class="hero" id="about">
         <div class="container">
-            <h1>Kvadratik Pro</h1>
-            <div class="version">Версия 4.0</div>
+            <h1>Kvadratik Pro 4.0</h1>
             <p>Мощный пиксельный редактор с искусственным интеллектом. Слои, анимация, текст и умный AI помощник на базе DeepSeek.</p>
-            <div class="hero-buttons">
+            <div style="margin-top: 30px;">
                 <a href="#download" class="btn btn-primary">Скачать бесплатно</a>
-                <a href="#features" class="btn btn-outline">Возможности</a>
+                <a href="#features" class="btn btn-outline" style="margin-left: 15px;">Возможности</a>
             </div>
         </div>
     </section>
     
-    <section class="update-4-0">
-        <div class="update-card">
-            <h2>Kvadratik Pro 4.0</h2>
-            <h3>МЕГА-ОБНОВЛЕНИЕ С AI</h3>
+    <!-- БЛОК ОБНОВЛЕНИЯ 4.0 -->
+    <section style="background: #f8f9fa; padding: 60px 0;">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 36px; margin-bottom: 40px; color: #333;">Kvadratik Pro 4.0</h2>
+            <h3 style="text-align: center; font-size: 24px; margin-bottom: 40px; color: #4a90e2;">МЕГА-ОБНОВЛЕНИЕ С AI</h3>
             
-            <div class="features-4-0">
-                <div class="feature-4-0">
-                    <h4>📝 ТЕКСТ</h4>
-                    <p>Полноценный инструмент для написания текста. Пиксельный шрифт 3x5, поддержка кириллицы и латиницы. Просто выбери инструмент "Текст" и кликни на холст!</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 40px;">
+                <div style="background: white; padding: 30px; border-radius: 10px; border-left: 4px solid #4a90e2; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                    <h4 style="font-size: 22px; color: #4a90e2; margin-bottom: 15px;">📝 ТЕКСТ</h4>
+                    <p style="color: #666;">Полноценный инструмент для написания текста. Пиксельный шрифт 3x5, поддержка кириллицы и латиницы.</p>
                 </div>
                 
-                <div class="feature-4-0">
-                    <h4>🤖 KVADRATIK PRO AI</h4>
-                    <p>Собственный искусственный интеллект на базе DeepSeek-R1:7b. Помогает с идеями, отвечает на вопросы, объясняет инструменты. Работает полностью локально!</p>
+                <div style="background: white; padding: 30px; border-radius: 10px; border-left: 4px solid #4a90e2; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                    <h4 style="font-size: 22px; color: #4a90e2; margin-bottom: 15px;">🤖 AI ПОМОЩНИК</h4>
+                    <p style="color: #666;">Собственный искусственный интеллект на базе DeepSeek-R1:7b. Помогает с идеями, отвечает на вопросы.</p>
                 </div>
             </div>
             
-            <div class="ai-section">
-                <h4>⚙️ ДОСТУПНЫЕ AI МОДЕЛИ</h4>
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px; border-radius: 10px; color: white;">
+                <h4 style="font-size: 22px; margin-bottom: 20px;">⚙️ ДОСТУПНЫЕ AI МОДЕЛИ</h4>
                 
-                <div class="terminal">
-                    <p style="color: #4a90e2; font-weight: bold;">🌐 ОБЛАЧНЫЕ (самые умные, через интернет)</p>
-                    <p style="color: #4a90e2;">deepseek-v3.1:671b-cloud</p>
-                    <p style="color: #666; font-size: 12px; margin-top: 0;">671B параметров, самый мощный</p>
+                <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 8px; font-family: monospace;">
+                    <p style="color: #ffd700; font-weight: bold;">🌐 ОБЛАЧНЫЕ:</p>
+                    <p style="color: #fff;">ollama pull deepseek-v3.1:671b-cloud</p>
                     
-                    <p style="color: #4a90e2; font-weight: bold; margin-top: 20px;">💻 ЛОКАЛЬНЫЕ (на твоём ПК)</p>
+                    <p style="color: #ffd700; font-weight: bold; margin-top: 15px;">💻 ЛОКАЛЬНЫЕ:</p>
+                    <p style="color: #4a90e2;"># DeepSeek</p>
+                    <p style="color: #fff;">ollama pull deepseek-r1:7b     # 4.7 ГБ</p>
+                    <p style="color: #fff;">ollama pull deepseek-r1:1.5b   # 1.1 ГБ</p>
                     
-                    <p style="color: #4a90e2; margin-top: 15px;">🔹 DeepSeek (умные, русский отлично)</p>
-                    <p>ollama pull deepseek-r1:7b     # 4.7 ГБ, самый умный локальный</p>
-                    <p>ollama pull deepseek-r1:1.5b   # 1.1 ГБ, легкий и быстрый</p>
+                    <p style="color: #4a90e2; margin-top: 10px;"># Gemma</p>
+                    <p style="color: #fff;">ollama pull gemma3:4b          # 3.3 ГБ</p>
                     
-                    <p style="color: #4a90e2; margin-top: 15px;">🔹 Gemma (Google, качественные)</p>
-                    <p>ollama pull gemma3:4b          # 3.3 ГБ, хороший баланс</p>
-                    <p>ollama pull gemma2:2b          # 1.8 ГБ, быстрый</p>
-                    
-                    <p style="color: #4a90e2; margin-top: 15px;">🔹 Llama (Meta, мощные)</p>
-                    <p>ollama pull llama3.2:3b        # 2.8 ГБ, отличный русский</p>
-                    <p>ollama pull llama3.2:1b        # 0.8 ГБ, супер-легкий</p>
-                    
-                    <p style="color: #4a90e2; margin-top: 15px;">🔹 Phi (Microsoft, умные)</p>
-                    <p>ollama pull phi3:3.8b          # 3.2 ГБ, очень умный</p>
-                    <p>ollama pull phi3:mini          # 2.1 ГБ, легкий</p>
-                    
-                    <p style="color: #4a90e2; margin-top: 15px;">🔹 Mistral (быстрые)</p>
-                    <p>ollama pull mistral:7b         # 4.1 ГБ, быстрый и умный</p>
+                    <p style="color: #4a90e2; margin-top: 10px;"># Llama</p>
+                    <p style="color: #fff;">ollama pull llama3.2:3b        # 2.8 ГБ</p>
                 </div>
                 
-                <p style="color: #cccccc; font-size: 14px; margin-top: 20px;">
+                <p style="font-size: 14px; margin-top: 20px; opacity: 0.9;">
                     * Программа сама выберет лучшую доступную модель<br>
-                    ** Для локальных моделей нужно место на диске (от 1 до 5 ГБ)<br>
-                    *** Рекомендуется 8+ ГБ RAM для комфортной работы
+                    ** Рекомендуется 8+ ГБ RAM
                 </p>
             </div>
-            
-            <p style="text-align: center; color: #666; margin-top: 20px;">
-                Обновление уже доступно в программе. Скачай последнюю версию!
-            </p>
         </div>
     </section>
     
@@ -127,7 +111,7 @@
         <div class="container">
             <h2>Как выглядит программа</h2>
             <img src="screenshot.png" alt="Kvadratik Pro 4.0" onerror="this.style.display='none'">
-            <p style="color: #cccccc; margin-top: 20px;">Тёмная тема как в VS Code, изменяемые панели, AI помощник</p>
+            <p style="color: #666; margin-top: 20px;">Тёмная тема как в VS Code, изменяемые панели, AI помощник</p>
         </div>
     </section>
     
@@ -192,29 +176,29 @@
         </div>
     </section>
     
-    <section class="hotkeys" id="hotkeys">
+    <section class="features" id="hotkeys" style="background: #f8f9fa;">
         <div class="container">
             <h2>Горячие клавиши</h2>
-            <div class="hotkeys-grid">
-                <div class="hotkey-item"><span class="hotkey-key">B</span> - Кисть</div>
-                <div class="hotkey-item"><span class="hotkey-key">E</span> - Ластик</div>
-                <div class="hotkey-item"><span class="hotkey-key">G</span> - Градиент</div>
-                <div class="hotkey-item"><span class="hotkey-key">M</span> - Волшебная палочка</div>
-                <div class="hotkey-item"><span class="hotkey-key">S</span> - Выделение</div>
-                <div class="hotkey-item"><span class="hotkey-key">L</span> - Линия</div>
-                <div class="hotkey-item"><span class="hotkey-key">R</span> - Прямоугольник</div>
-                <div class="hotkey-item"><span class="hotkey-key">O</span> - Овал</div>
-                <div class="hotkey-item"><span class="hotkey-key">I</span> - Пипетка</div>
-                <div class="hotkey-item"><span class="hotkey-key">F</span> - Заливка</div>
-                <div class="hotkey-item"><span class="hotkey-key">T</span> - Текст</div>
-                <div class="hotkey-item"><span class="hotkey-key">[</span> - Уменьшить кисть</div>
-                <div class="hotkey-item"><span class="hotkey-key">]</span> - Увеличить кисть</div>
-                <div class="hotkey-item"><span class="hotkey-key">X</span> - Поменять цвета</div>
-                <div class="hotkey-item"><span class="hotkey-key">D</span> - Цвета по умолчанию</div>
-                <div class="hotkey-item"><span class="hotkey-key">Ctrl+Z</span> - Отменить</div>
-                <div class="hotkey-item"><span class="hotkey-key">Ctrl+Y</span> - Повторить</div>
-                <div class="hotkey-item"><span class="hotkey-key">Ctrl+C</span> - Копировать</div>
-                <div class="hotkey-item"><span class="hotkey-key">Ctrl+V</span> - Вставить</div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; max-width: 800px; margin: 0 auto;">
+                <div style="background: white; padding: 10px 15px; border-radius: 5px; border: 1px solid #ddd;"><span style="color: #4a90e2; font-weight: bold;">B</span> - Кисть</div>
+                <div style="background: white; padding: 10px 15px; border-radius: 5px; border: 1px solid #ddd;"><span style="color: #4a90e2; font-weight: bold;">E</span> - Ластик</div>
+                <div style="background: white; padding: 10px 15px; border-radius: 5px; border: 1px solid #ddd;"><span style="color: #4a90e2; font-weight: bold;">G</span> - Градиент</div>
+                <div style="background: white; padding: 10px 15px; border-radius: 5px; border: 1px solid #ddd;"><span style="color: #4a90e2; font-weight: bold;">M</span> - Волшебная палочка</div>
+                <div style="background: white; padding: 10px 15px; border-radius: 5px; border: 1px solid #ddd;"><span style="color: #4a90e2; font-weight: bold;">S</span> - Выделение</div>
+                <div style="background: white; padding: 10px 15px; border-radius: 5px; border: 1px solid #ddd;"><span style="color: #4a90e2; font-weight: bold;">L</span> - Линия</div>
+                <div style="background: white; padding: 10px 15px; border-radius: 5px; border: 1px solid #ddd;"><span style="color: #4a90e2; font-weight: bold;">R</span> - Прямоугольник</div>
+                <div style="background: white; padding: 10px 15px; border-radius: 5px; border: 1px solid #ddd;"><span style="color: #4a90e2; font-weight: bold;">O</span> - Овал</div>
+                <div style="background: white; padding: 10px 15px; border-radius: 5px; border: 1px solid #ddd;"><span style="color: #4a90e2; font-weight: bold;">I</span> - Пипетка</div>
+                <div style="background: white; padding: 10px 15px; border-radius: 5px; border: 1px solid #ddd;"><span style="color: #4a90e2; font-weight: bold;">F</span> - Заливка</div>
+                <div style="background: white; padding: 10px 15px; border-radius: 5px; border: 1px solid #ddd;"><span style="color: #4a90e2; font-weight: bold;">T</span> - Текст</div>
+                <div style="background: white; padding: 10px 15px; border-radius: 5px; border: 1px solid #ddd;"><span style="color: #4a90e2; font-weight: bold;">[</span> - Уменьшить кисть</div>
+                <div style="background: white; padding: 10px 15px; border-radius: 5px; border: 1px solid #ddd;"><span style="color: #4a90e2; font-weight: bold;">]</span> - Увеличить кисть</div>
+                <div style="background: white; padding: 10px 15px; border-radius: 5px; border: 1px solid #ddd;"><span style="color: #4a90e2; font-weight: bold;">X</span> - Поменять цвета</div>
+                <div style="background: white; padding: 10px 15px; border-radius: 5px; border: 1px solid #ddd;"><span style="color: #4a90e2; font-weight: bold;">D</span> - Цвета по умолчанию</div>
+                <div style="background: white; padding: 10px 15px; border-radius: 5px; border: 1px solid #ddd;"><span style="color: #4a90e2; font-weight: bold;">Ctrl+Z</span> - Отменить</div>
+                <div style="background: white; padding: 10px 15px; border-radius: 5px; border: 1px solid #ddd;"><span style="color: #4a90e2; font-weight: bold;">Ctrl+Y</span> - Повторить</div>
+                <div style="background: white; padding: 10px 15px; border-radius: 5px; border: 1px solid #ddd;"><span style="color: #4a90e2; font-weight: bold;">Ctrl+C</span> - Копировать</div>
+                <div style="background: white; padding: 10px 15px; border-radius: 5px; border: 1px solid #ddd;"><span style="color: #4a90e2; font-weight: bold;">Ctrl+V</span> - Вставить</div>
             </div>
         </div>
     </section>
@@ -236,29 +220,30 @@
                 </ul>
             </div>
             
-            <!-- СКАЧИВАНИЕ С ЯНДЕКС.ДИСКА -->
             <div style="margin: 30px 0;">
-                <a href="https://disk.yandex.ru/d/Xu4DqZOEypRyHQ" class="btn btn-primary" style="font-size: 20px; padding: 20px 50px;">
-                    📥 Скачать с Яндекс.Диска (30 МБ)
-                </a>
+                <a href="https://disk.yandex.ru/d/Xu4DqZOEypRyHQ" class="btn btn-primary">📥 Скачать с Яндекс.Диска (30 МБ)</a>
             </div>
             
-            <p style="color: #cccccc; margin: 20px 0;">
-                Программа не требует установки. Просто запустите .exe файл.
-            </p>
+            <div class="warning-box">
+                <p>⚠️ Перед скачиванием:</p>
+                <p>• Программа не требует установки</p>
+                <p>• AI требует установки Ollama (подробности выше)</p>
+                <p>• При первом запуске Windows Defender может попросить подтверждение</p>
+            </div>
             
             <!-- Блок доната -->
             <div style="text-align: center; margin: 40px auto; max-width: 600px;">
-                <div style="background: linear-gradient(135deg, #2d2d30 0%, #1e1e1e 100%); padding: 30px; border-radius: 15px; border: 1px solid #3f3f46;">
-                    <h3 style="color: white; margin-bottom: 15px;">Поддержать разработчика</h3>
-                    <p style="color: #cccccc; margin-bottom: 25px;">
+                <div style="background: linear-gradient(135deg, #f5f7fa 0%, #e9ecf0 100%); padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                    <h3 style="color: #333; margin-bottom: 15px;">Поддержать разработчика</h3>
+                    <p style="color: #666; margin-bottom: 25px;">
                         Программа полностью бесплатна. Если она вам помогает, можете угостить автора кофе.
                     </p>
                     
                     <a href="https://yoomoney.ru/to/4100119477760313" target="_blank" 
                        style="display: inline-block; background: #ffcc00; color: #333; padding: 15px 40px; 
                               border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 18px;
-                              box-shadow: 0 4px 10px rgba(255,204,0,0.3); transition: transform 0.3s;">
+                              box-shadow: 0 4px 10px rgba(255,204,0,0.3); transition: transform 0.3s;
+                              margin: 5px;">
                         💛 ЮMoney
                     </a>
                     
@@ -267,17 +252,13 @@
                     </p>
                 </div>
             </div>
-            
-            <p style="color: #666; font-size: 14px; margin-top: 20px;">
-                AI требует установки Ollama. Подробности в разделе обновления 4.0
-            </p>
         </div>
     </section>
     
     <footer class="footer">
         <div class="container">
             <p>© 2026 Kvadratik Pro 4.0</p>
-            <p>Разработчик: <strong style="color: #007acc;">CeTzY Dev</strong></p>
+            <p>Разработчик: <strong style="color: #667eea;">CeTzY Dev</strong></p>
             <p>По вопросам: <a href="mailto:cleaner1c@mail.ru">cleaner1c@mail.ru</a></p>
             <p style="margin-top: 20px; font-size: 12px;">Бесплатная программа с открытым кодом</p>
         </div>
